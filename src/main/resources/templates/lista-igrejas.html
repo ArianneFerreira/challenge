@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Igrejas</title>
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+
+</head>
+<body>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Endereco</th>
+        <th>Paroco</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="igreja : ${igrejas}">
+        <td th:text="${igreja.nome}"></td>
+        <td th:text="${igreja.endereco}"></td>
+        <td th:text="${igreja.paroco}"></td>
+        <td th:text="${igreja.telefone}"></td>
+        <td><a class="btn btn-default" th:href="@{/igreja-servicos/{id_igreja}(id_igreja=${igreja.id})}"><i class="glyphicon glyphicon-heart"></i></a></td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script  th:href="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

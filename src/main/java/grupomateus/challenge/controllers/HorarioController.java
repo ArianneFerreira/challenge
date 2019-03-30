@@ -5,9 +5,11 @@ import grupomateus.challenge.models.IgrejaServico;
 import grupomateus.challenge.repositories.HorarioRepository;
 import grupomateus.challenge.repositories.IgrejaServicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class HorarioController {
 
     @Autowired
@@ -24,6 +26,12 @@ public class HorarioController {
     @RequestMapping(value = "/horarios")
     public Object buscar(){
        return horarioRepository.findAll();
+    }
+
+    @RequestMapping(value = "/horarios/{id_igreja}")
+    public String horariosIgreja(@PathVariable("id_igreja") long id, Model model){
+
+
     }
 
     @RequestMapping(value = "/horarios/{id_igreja/{id_servico}")

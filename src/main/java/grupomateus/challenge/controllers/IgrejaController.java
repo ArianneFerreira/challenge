@@ -3,9 +3,11 @@ package grupomateus.challenge.controllers;
 import grupomateus.challenge.models.Igreja;
 import grupomateus.challenge.repositories.IgrejaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class IgrejaController {
 
     @Autowired
@@ -17,8 +19,9 @@ public class IgrejaController {
     }
 
     @RequestMapping(value = "/igrejas")
-    public Object buscar(){
-        return igrejaRepository.findAll();
+    public String buscar(Model model){
+        model.addAttribute("igrejas", igrejaRepository.findAll());
+        return "lista-igrejas";
     }
 
     @RequestMapping(value = "/igrejas/{id}", method =  RequestMethod.GET)

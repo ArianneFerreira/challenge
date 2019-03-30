@@ -3,9 +3,10 @@ package grupomateus.challenge.controllers;
 import grupomateus.challenge.models.Servico;
 import grupomateus.challenge.repositories.ServicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class ServicoController {
 
     @Autowired
