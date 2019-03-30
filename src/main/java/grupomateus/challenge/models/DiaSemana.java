@@ -13,7 +13,7 @@ public class DiaSemana {
     @Column
     private String descricao;
 
-    //-------------------------------------------------------------
+
 
     public Long getId() {
         return id;
